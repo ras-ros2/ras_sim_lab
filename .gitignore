@@ -1,0 +1,7 @@
+.vscode
+ros2_ws/build
+ros2_ws/install
+ros2_ws/log
+
+__pycache__/
+ros2_ws/src/assets/robot/uf_ros_lib/uf_ros_lib/substitutions/__pycache__
