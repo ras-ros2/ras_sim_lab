@@ -1,25 +1,25 @@
 repositories:
     oss_aws_transport:
         type: git
-        url: git@github.com:acceleration-robotics/oss_aws_transport.git
+        url: git@github.com:ras-ros2/oss_aws_transport.git
         version: main
     oss_bt_framework:
         type: git
-        url: git@github.com:acceleration-robotics/oss_bt_framework.git
+        url: git@github.com:ras-ros2/oss_bt_framework.git
         version: modular
     oss_common:
         type: git
-        url: git@github.com:acceleration-robotics/oss_common.git
+        url: git@github.com:ras-ros2/oss_common.git
         version: main
     oss_interfaces:
         type: git
-        url: git@github.com:acceleration-robotics/oss_interfaces.git
+        url: git@github.com:ras-ros2/oss_interfaces.git
         version: main
     oss_moveit:
         type: git
-        url: git@github.com:acceleration-robotics/oss_moveit.git
+        url: git@github.com:ras-ros2/oss_moveit.git
         version: modular
     oss_resource_lib:
         type: git
-        url: git@github.com:acceleration-robotics/oss_resource_lib.git
+        url: git@github.com:ras-ros2/oss_resource_lib.git
         version: main
