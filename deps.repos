@@ -6,7 +6,7 @@ repositories:
     oss_bt_framework:
         type: git
         url: git@github.com:ras-ros2/oss_bt_framework.git
-        version: modular
+        version: main
     oss_common:
         type: git
         url: git@github.com:ras-ros2/oss_common.git
@@ -18,7 +18,7 @@ repositories:
     oss_moveit:
         type: git
         url: git@github.com:ras-ros2/oss_moveit.git
-        version: modular
+        version: main
     oss_resource_lib:
         type: git
         url: git@github.com:ras-ros2/oss_resource_lib.git
