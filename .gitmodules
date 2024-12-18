@@ -2,3 +2,6 @@
 	path = ros2_ws/src/third_party/rosbridge_suite
 	url = https://github.com/RobotWebTools/rosbridge_suite
 	branch = ros2
+[submodule "ros2_ws/src/third_party/ros2-aruco-pose-estimation"]
+	path = ros2_ws/src/third_party/ros2-aruco-pose-estimation
+	url = git@github.com:AIRLab-POLIMI/ros2-aruco-pose-estimation.git
