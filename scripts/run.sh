@@ -13,12 +13,14 @@ tmux send-keys -t main_session:0.3 "ros2 run ras_bt_framework TrajectoryRecordsS
 tmux new-window -t main_session:1 -n 'website'
 tmux split-window -v -t main_session:1
 tmux split-window -v -t main_session:1
+tmux split-window -v -t main_session:1
 
 tmux send-keys -t main_session:1.0 "ros2 launch rosbridge_server rosbridge_websocket_launch.xml" C-m
 
 tmux send-keys -t main_session:1.1 "cd /ras_sim_lab/ras_webapp && npm run dev" C-m
 
 tmux send-keys -t main_session:1.2 "ros2 run ras_aws_transport log_receiver.py" C-m
+tmux send-keys -t main_session:1.3 "ros2 run ras_aws_transport mqtt_broker.py" C-m
 
 tmux new-window -t main_session:2 -n 'experiment'
 tmux split-window -v -t main_session:2
