@@ -9,7 +9,7 @@ from ament_index_python.packages import get_package_share_directory
 from uf_ros_lib.moveit_configs_builder import MoveItConfigsBuilder
 from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from ras_common.lab_loader import LabLoader
+from ras_common.config.loaders.lab_setup import LabSetup as LabLoader
 from ras_resource_lib.managers.asset_manager import AssetManager,AssetType
 from ras_resource_lib.types.manipulator.component import ManipulatorComponent
 from geometry_msgs.msg import Pose
