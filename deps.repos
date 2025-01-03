@@ -1,27 +1,11 @@
 repositories:
-    ros2_ws/src/ras_aws_transport:
-        type: git
-        url: git@github.com:ras-ros2/ras_aws_transport.git
-        version: main
     ros2_ws/src/ras_bt_framework:
         type: git
         url: git@github.com:ras-ros2/ras_bt_framework.git
         version: main
-    ros2_ws/src/ras_common:
-        type: git
-        url: git@github.com:ras-ros2/ras_common.git
-        version: main
-    ros2_ws/src/ras_interfaces:
-        type: git
-        url: git@github.com:ras-ros2/ras_interfaces.git
-        version: main
     ros2_ws/src/ras_moveit:
         type: git
         url: git@github.com:ras-ros2/ras_moveit.git
-        version: main
-    ros2_ws/src/ras_resource_lib:
-        type: git
-        url: git@github.com:ras-ros2/ras_resource_lib.git
         version: main
     ros2_ws/src/ras_sim:
         type: git
