@@ -7,5 +7,7 @@ __pycache__/
 ros2_ws/src/assets/robot/uf_ros_lib/uf_ros_lib/substitutions/__pycache__
 
 configs/*
-!configs/keep
+!configs/.keep
 ras_webapp/
+logs/*
+!logs/.keep
