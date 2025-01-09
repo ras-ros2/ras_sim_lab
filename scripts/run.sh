@@ -27,9 +27,18 @@ tmux split-window -v -t main_session:2
 tmux split-window -v -t main_session:2
 tmux split-window -v -t main_session:2
 
-tmux send-keys -t main_session:2.0 "ros2 run ras_bt_framework batman.py" C-m
+tmux send-keys -t main_session:2.0 "ros2 run ras_bt_framework experiment_service.py" C-m
 tmux send-keys -t main_session:2.1 "ros2 run ras_aws_transport bt_sender.py" C-m
 tmux send-keys -t main_session:2.2 "ros2 run ras_aws_transport iot_sender.py" C-m
 tmux send-keys -t main_session:2.3 "ros2 run ras_bt_framework FakeGripperServer.py" C-m
+
+
+tmux new-window -t main_session:3 -n 'debugging'
+tmux split-window -v -t main_session:3
+tmux split-window -v -t main_session:3
+
+tmux send-keys -t main_session:3.0 "ros2 run spawn_gz spawn_model_node" C-m
+tmux send-keys -t main_session:3.1 "ros2 run ras_sim spawn_manager.py" C-m
+
 
 tmux attach-session -t main_session

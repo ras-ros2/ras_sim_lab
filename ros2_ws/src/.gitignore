@@ -1,3 +1,5 @@
+assets/*
+!assets/.keep
 ras_common/
 ras_interfaces/
 ras_moveit/
