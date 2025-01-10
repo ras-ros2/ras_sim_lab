@@ -37,7 +37,7 @@ tmux new-window -t main_session:3 -n 'debugging'
 tmux split-window -v -t main_session:3
 tmux split-window -v -t main_session:3
 
-tmux send-keys -t main_session:3.0 "ros2 run spawn_gz spawn_model_node" C-m
+tmux send-keys -t main_session:3.0 "ros2 run ras_sim spawn_model_node" C-m
 tmux send-keys -t main_session:3.1 "ros2 run ras_sim spawn_manager.py" C-m
 
 
