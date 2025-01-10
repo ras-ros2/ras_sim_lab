@@ -8,6 +8,8 @@ source ~/.nvm/nvm.sh
 export IGN_PARTITION=$RAS_APP_NAME
 export ROS_DOMAIN_ID=2
 
+# include the ras_cli_setup.sh
+source $RAS_APP_PATH/scripts/ras_cli_setup.sh
 
 ras_app() { if [ -e /tmp/.RAS_RUN ]
     then
