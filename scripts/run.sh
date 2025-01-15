@@ -17,7 +17,7 @@ tmux split-window -v -t main_session:1
 
 tmux send-keys -t main_session:1.0 "ros2 launch rosbridge_server rosbridge_websocket_launch.xml" C-m
 
-tmux send-keys -t main_session:1.1 "cd /ras_sim_lab/ras_webapp && npm run dev" C-m
+tmux send-keys -t main_session:1.1 "cd /ras_server_app/ras_webapp && npm run dev" C-m
 
 tmux send-keys -t main_session:1.2 "ros2 run ras_aws_transport log_receiver.py" C-m
 tmux send-keys -t main_session:1.3 "ros2 run ras_aws_transport mqtt_broker.py" C-m
@@ -28,7 +28,6 @@ tmux split-window -v -t main_session:2
 tmux split-window -v -t main_session:2
 
 tmux send-keys -t main_session:2.0 "ros2 run ras_bt_framework experiment_service.py" C-m
-tmux send-keys -t main_session:2.1 "ros2 run ras_aws_transport bt_sender.py" C-m
 tmux send-keys -t main_session:2.2 "ros2 run ras_aws_transport iot_sender.py" C-m
 tmux send-keys -t main_session:2.3 "ros2 run ras_bt_framework FakeGripperServer.py" C-m
 
