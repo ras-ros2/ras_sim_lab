@@ -21,6 +21,16 @@ run_real_robot() {
     ros2 action send_goal /execute_exp ras_interfaces/action/ExecuteExp {}
 }
 
+go_to_home() {
+    echo "Sending cmds to robot for home position"
+    ros2 service call /server_transport ras_interfaces/srv/ReadBlack "blackboard: 'home'"
+}
+
+sync_robot() {
+    echo "Syncing robot"
+    ros2 service call /server_transport ras_interfaces/srv/ReadBlack "blackboard: 'sync'"
+}
+
 # Register in bash configuration
 ras_cli() {
     local command=$1
@@ -35,12 +45,20 @@ ras_cli() {
         run_real_robot)
             run_real_robot
             ;;
+        go_to_home)
+            go_to_home
+            ;;
+        sync_robot)
+            sync_robot
+            ;;
         -h|--help)
             echo "Usage: ras_cli <command> [options]"
             echo "Commands:"
             echo "  load_experiment <exp_number>   Load the specified experiment"
             echo "  run_sim_robot                  Start the simulation robot"
             echo "  run_real_robot                 Start the real robot"
+            echo "  go_to_home                     Send commands to robot for home position"
+            echo "  sync_robot                     Sync the robot"
             ;;
         *)
             echo "Unknown command: $command"
@@ -56,7 +74,7 @@ _ras_cli_completion() {
     cur="${COMP_WORDS[COMP_CWORD]}"  # Current word being typed
     prev="${COMP_WORDS[COMP_CWORD-1]}"  # Previous word
 
-    commands="load_experiment run_sim_robot run_real_robot"
+    commands="load_experiment run_sim_robot run_real_robot go_to_home sync_robot"
 
     # If the first argument is 'ras_cli', suggest 'load_experiment', 'run_sim_robot', and 'run_real_robot'
     if [[ ${COMP_WORDS[0]} == "ras_cli" ]]; then
