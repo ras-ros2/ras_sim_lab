@@ -1,15 +1,7 @@
 repositories:
-    ros2_ws/src/ras_bt_framework:
-        type: git
-        url: git@github.com:ras-ros2/ras_bt_framework.git
-        version: dev
     ros2_ws/src/ras_cognition:
         type: git
         url: git@github.com:ras-ros2/ras_moveit.git
-        version: reorg
-    ros2_ws/src/ras_sim:
-        type: git
-        url: git@github.com:ras-ros2/ras_sim.git
         version: reorg
     ras_webapp:
         type: git
