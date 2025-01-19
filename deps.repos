@@ -1,7 +1,7 @@
 repositories:
     ros2_ws/src/ras_cognition:
         type: git
-        url: git@github.com:ras-ros2/ras_moveit.git
+        url: git@github.com:ras-ros2/ras_cognition.git
         version: reorg
     ras_webapp:
         type: git

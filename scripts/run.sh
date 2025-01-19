@@ -5,7 +5,7 @@ tmux split-window -v -t main_session:0
 tmux split-window -v -t main_session:0
 tmux split-window -v -t main_session:0
 
-tmux send-keys -t main_session:0.0 "ros2 launch ras_app_core main.launch.py" C-m
+tmux send-keys -t main_session:0.0 "ros2 launch ras_app_main main.launch.py" C-m
 tmux send-keys -t main_session:0.1 "ros2 run ras_bt_framework executor" C-m
 tmux send-keys -t main_session:0.2 "ros2 launch ras_moveit moveit_server.launch.py" C-m
 tmux send-keys -t main_session:0.3 "ros2 run ras_bt_framework TrajectoryRecordsService.py" C-m
