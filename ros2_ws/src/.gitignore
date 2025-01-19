@@ -1,9 +1,3 @@
-assets/*
-!assets/.keep
-ras_common/
-ras_interfaces/
-ras_moveit/
-ras_resource_lib/
-ras_transport/
-ras_bt_framework/
-ras_sim/
+/assets/
+/common_pkgs/
+/ras_cognition/
