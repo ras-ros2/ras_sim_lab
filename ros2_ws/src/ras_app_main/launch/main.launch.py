@@ -37,7 +37,7 @@ def generate_launch_description():
 
     # RViz
     rviz_config_file = (
-        get_package_share_directory("ras_app_core") + "/rviz/moveit.rviz"
+        get_package_share_directory("ras_app_main") + "/rviz/moveit.rviz"
     )
 
     rviz_node = Node(
