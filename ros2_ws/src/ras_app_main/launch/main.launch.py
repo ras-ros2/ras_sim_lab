@@ -6,7 +6,7 @@ from launch_ros.actions import Node
 from launch.launch_context import LaunchContext
 from launch.logging import get_logger
 from ament_index_python.packages import get_package_share_directory
-from uf_ros_lib.moveit_configs_builder import MoveItConfigsBuilder
+# from uf_ros_lib.moveit_configs_builder import MoveItConfigsBuilder
 from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from ras_common.config.loaders.lab_setup import LabSetup as LabLoader
