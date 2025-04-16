@@ -21,6 +21,17 @@ run_real_robot() {
     ros2 action send_goal /execute_exp ras_interfaces/action/ExecuteExp {}
 }
 
+run_execute_exp() {
+    local exp_number=$1
+    if [ -z "$exp_number" ]; then
+        echo "Please provide a valid experiment number like"
+        echo "ras_cli load_experiment 1"
+        return 1
+    fi
+    echo "Running experiment $exp_number step by step"
+    ros2 service call /execute_experiment ras_interfaces/srv/LoadExp "{exepriment_id: '$exp_number', instruction_no: '', picked_object: ''}"
+}
+
 go_to_home() {
     echo "Sending cmds to robot for home position"
     ros2 service call /server_transport ras_interfaces/srv/ReadBlack "blackboard: 'home'"
