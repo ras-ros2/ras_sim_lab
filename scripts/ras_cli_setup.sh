@@ -62,6 +62,9 @@ ras_cli() {
         sync_robot)
             sync_robot
             ;;
+        run_execute_exp)
+            run_execute_exp "$@"
+            ;;
         -h|--help)
             echo "Usage: ras_cli <command> [options]"
             echo "Commands:"
@@ -70,6 +73,7 @@ ras_cli() {
             echo "  run_real_robot                 Start the real robot"
             echo "  go_to_home                     Send commands to robot for home position"
             echo "  sync_robot                     Sync the robot"
+            echo "  run_execute_exp <exp_number>    Run the specified experiment step by step"
             ;;
         *)
             echo "Unknown command: $command"
@@ -85,14 +89,14 @@ _ras_cli_completion() {
     cur="${COMP_WORDS[COMP_CWORD]}"  # Current word being typed
     prev="${COMP_WORDS[COMP_CWORD-1]}"  # Previous word
 
-    commands="load_experiment run_sim_robot run_real_robot go_to_home sync_robot"
+    commands="load_experiment run_sim_robot run_real_robot go_to_home sync_robot run_execute_exp"
 
     # If the first argument is 'ras_cli', suggest 'load_experiment', 'run_sim_robot', and 'run_real_robot'
     if [[ ${COMP_WORDS[0]} == "ras_cli" ]]; then
         COMPREPLY=( $(compgen -W "$commands" -- "$cur") )
     elif [[ $prev == "load_experiment" ]]; then
         # If the previous word was 'load_experiment', suggest experiment numbers (e.g., 1, 2, 3, etc.)
-        COMPREPLY=( $(compgen -W "1 2 3 4 5" -- "$cur") )
+        COMPREPLY=( $(compgen -W "1 2 3 4 5 6 7 8 9 10" -- "$cur") )
     fi
 }
 
