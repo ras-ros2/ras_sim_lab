@@ -30,7 +30,7 @@ tmux split-window -v -t main_session:2
 
 tmux send-keys -t main_session:2.0 "ros2 run ras_bt_framework experiment_service.py" C-m
 # tmux send-keys -t main_session:2.2 "ros2 run ras_transport iot_sender.py" C-m
-tmux send-keys -t main_session:2.3 "ros2 run ras_bt_framework FakeGripperServer.py" C-m
+tmux send-keys -t main_session:2.3 "ros2 run ras_bt_framework GripperStatus.py" C-m
 
 
 tmux new-window -t main_session:3 -n 'debugging'
