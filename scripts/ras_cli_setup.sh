@@ -47,6 +47,9 @@ ras_cli() {
     local command=$1
     shift
     case "$command" in
+        resume_experiment)
+            resume_experiment
+            ;;
         load_experiment)
             load_experiment "$@"
             ;;
@@ -74,12 +77,18 @@ ras_cli() {
             echo "  go_to_home                     Send commands to robot for home position"
             echo "  sync_robot                     Sync the robot"
             echo "  run_execute_exp <exp_number>    Run the specified experiment step by step"
+            echo "  resume_experiment              Resume the current experiment"
             ;;
         *)
             echo "Unknown command: $command"
             echo "Use -h or --help for usage information."
             ;;
     esac
+}
+
+resume_experiment() {
+    echo "Resuming experiment"
+    ros2 service call /resume_experiment std_srvs/srv/Trigger "{}"
 }
 
 # Enable bash completion for ras_cli commands
@@ -89,7 +98,7 @@ _ras_cli_completion() {
     cur="${COMP_WORDS[COMP_CWORD]}"  # Current word being typed
     prev="${COMP_WORDS[COMP_CWORD-1]}"  # Previous word
 
-    commands="load_experiment run_sim_robot run_real_robot go_to_home sync_robot run_execute_exp"
+    commands="load_experiment run_sim_robot run_real_robot go_to_home sync_robot run_execute_exp resume_experiment"
 
     # If the first argument is 'ras_cli', suggest 'load_experiment', 'run_sim_robot', and 'run_real_robot'
     if [[ ${COMP_WORDS[0]} == "ras_cli" ]]; then
