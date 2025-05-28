@@ -15,7 +15,8 @@ tmux split-window -v -t main_session:1
 tmux split-window -v -t main_session:1
 tmux split-window -v -t main_session:1
 
-tmux send-keys -t main_session:1.0 "ros2 launch rosbridge_server rosbridge_websocket_launch.xml" C-m
+tmux send-keys -t main_session:1.0 "ros2 launch rosbridge_server rosbridge_websocket_launch.xml max_message_size:=104857600 max_buffer_size:=104857600
+" C-m
 
 tmux send-keys -t main_session:1.1 "cd /ras_server_app/ras_webapp && npm run dev" C-m
 
