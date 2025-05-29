@@ -98,7 +98,7 @@ resume_experiment() {
 calibrate() {
     echo "Starting ArUco marker calibration..."
     echo "Position the ArUco markers and press Enter to capture calibration data"
-    ros2 run ras_transport test_service_client.py
+    ros2 run ras_transport remote_calibration.py
 }
 
 # Enable bash completion for ras_cli commands
