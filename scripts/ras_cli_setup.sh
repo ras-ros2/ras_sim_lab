@@ -68,6 +68,9 @@ ras_cli() {
         run_execute_exp)
             run_execute_exp "$@"
             ;;
+        calibrate)
+            calibrate
+            ;;
         -h|--help)
             echo "Usage: ras_cli <command> [options]"
             echo "Commands:"
@@ -78,6 +81,7 @@ ras_cli() {
             echo "  sync_robot                     Sync the robot"
             echo "  run_execute_exp <exp_number>    Run the specified experiment step by step"
             echo "  resume_experiment              Resume the current experiment"
+            echo "  calibrate                      Run ArUco marker calibration"
             ;;
         *)
             echo "Unknown command: $command"
@@ -91,6 +95,12 @@ resume_experiment() {
     ros2 service call /resume_experiment std_srvs/srv/Trigger "{}"
 }
 
+calibrate() {
+    echo "Starting ArUco marker calibration..."
+    echo "Position the ArUco markers and press Enter to capture calibration data"
+    ros2 run ras_transport remote_calibration.py
+}
+
 # Enable bash completion for ras_cli commands
 _ras_cli_completion() {
     local cur prev commands
@@ -98,7 +108,7 @@ _ras_cli_completion() {
     cur="${COMP_WORDS[COMP_CWORD]}"  # Current word being typed
     prev="${COMP_WORDS[COMP_CWORD-1]}"  # Previous word
 
-    commands="load_experiment run_sim_robot run_real_robot go_to_home sync_robot run_execute_exp resume_experiment"
+    commands="load_experiment run_sim_robot run_real_robot go_to_home sync_robot run_execute_exp resume_experiment calibrate"
 
     # If the first argument is 'ras_cli', suggest 'load_experiment', 'run_sim_robot', and 'run_real_robot'
     if [[ ${COMP_WORDS[0]} == "ras_cli" ]]; then
